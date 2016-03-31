@@ -1,6 +1,10 @@
 #!/bin/sh
 set -o errexit
+
+path=`dirname $0`
+
+cd $path
+rm -rf ./build
 mkdir -p ./build
-javac -classpath ".;./src/*;./src" -d "./build"  ./src/*
-cd build
-java WebServer
+javac -d "./build"  ./src/*
+java -classpath ".;./build/*:./build" WebServer
