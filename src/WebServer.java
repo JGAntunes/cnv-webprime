@@ -21,7 +21,7 @@ public class WebServer {
   public static void main(String[] args) throws Exception {
     HttpServer server = HttpServer.create(new InetSocketAddress(PORT), 0);
     server.createContext(ROUTE_PATH, new FactorizationHandler());
-    // Multi thread supporta
+    // Multi thread support
     server.setExecutor(java.util.concurrent.Executors.newCachedThreadPool());
     server.start();
     System.out.println("Server running on port: " + PORT);

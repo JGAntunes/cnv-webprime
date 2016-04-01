@@ -15,7 +15,7 @@ cleanup () {
 cd $path
 
 Build () {
-  /bin/bash ./build-and-run.sh &
+  /bin/bash ./init.sh &
   BPID=$!
 }
 

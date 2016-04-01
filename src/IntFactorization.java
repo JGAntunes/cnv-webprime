@@ -11,21 +11,20 @@ public class IntFactorization {
 
 
   public ArrayList<BigInteger>  calcPrimeFactors(BigInteger num) {
+    return recursivePrimeFactors(num);
+  }
 
-    if (num.compareTo(one)==0) {
+  private ArrayList<BigInteger>  recursivePrimeFactors(BigInteger num) {
+
+    if (num.compareTo(one) == 0) {
       return factors;
     }
 
-    while(num.remainder(divisor).compareTo(zero)!=0) {
+    while(num.remainder(divisor).compareTo(zero) != 0) {
       divisor = divisor.add(one);
     }
 
     factors.add(divisor);
-    return calcPrimeFactors(num.divide(divisor));
-  }
-
-
-  public static void main(String[] args) {
-
+    return recursivePrimeFactors(num.divide(divisor));
   }
 }
